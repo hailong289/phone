@@ -1,0 +1,36 @@
+RewriteEngine on
+
+Options -Indexes
+RewriteRule "^$" site/
+RewriteRule "^trang-chu$" site/
+RewriteRule "^([a-zA-Z0-9]+)-([0-9]+)" site/index.php?act=cat&ten_nsx=$1&id=$2
+RewriteRule "^([a-zA-Z0-9-]+)-([0-9]+).html" site/index.php?act=chitiet&ten_sp=$1&id=$2
+RewriteRule "^nhasx/([a-zA-Z0-9-]+)-([0-9]+)/(.*)$" site/index.php?act=cat&tensx=$1&id=$2&page=$3
+RewriteRule "^san-pham/([0-9]+)$" site/index.php?act=cat&page=$1
+
+
+
+
+RewriteRule "dang-nhap" site/index.php?act=login
+RewriteRule "check-dn" site/index.php?act=dn
+RewriteRule "dang-ky" site/index.php?act=dangky
+RewriteRule "quen-pass" site/index.php?act=quenmatkhau
+RewriteRule "xac-thuc-([0-9]+)" site/index.php?act=xacthuc&id=$1
+RewriteRule "xac-thuc" site/index.php?act=xacthuc
+RewriteRule "doi-passquen-([0-9]+)" site/index.php?act=quenmatkhau&id=$1
+RewriteRule "pass-moi" site/index.php?act=quenmatkhau&what=mkmoi
+RewriteRule "Thong-tin" site/index.php?act=thongtintk
+RewriteRule "doi-pass" site/index.php?act=doimk
+RewriteRule "san-pham" site/index.php?act=cat
+RewriteRule "save-tk" site/index.php?act=savetk
+
+
+RewriteRule "tim-kiem/" site/index.php?act=search
+RewriteRule "^key=([a-zA-Z0-9-]+)/(.*)$" site/index.php?act=cat&search=$1&page=$2
+
+
+
+
+RewriteRule "^gio-hang$" site/index.php?act=showcart
+RewriteRule "^don-hang$" site/index.php?act=donhang
+RewriteRule "^thanh-toan$" site/index.php?act=checkout
